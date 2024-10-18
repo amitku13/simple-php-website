@@ -1,5 +1,5 @@
 # Use the official PHP image from the Docker Hub
-FROM php:7.2-apache
+FROM php:8.1-apache
 
 # Install dependencies (optional if needed for your application)
 RUN apt-get update && apt-get install -y \
@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
 RUN a2enmod rewrite
 
 # Copy the source code into the container
-COPY ./src/ /var/www/html/
+COPY . /var/www/html/
 
 # Set correct permissions for Apache
 RUN chown -R www-data:www-data /var/www/html \
