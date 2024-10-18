@@ -1,5 +1,5 @@
 # Use the official PHP image from the Docker Hub
-FROM php:8.1-apache
+FROM php:7.2-apache
 
 # Install dependencies (optional if needed for your application)
 RUN apt-get update && apt-get install -y \
