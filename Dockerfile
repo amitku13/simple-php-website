@@ -6,6 +6,6 @@ WORKDIR /app
 
 # Copy your PHP files into the container
 COPY . /app
-Expose 80
+EXPOSE 3000
 # Run the PHP script (replace 'index.php' with your main PHP file)
 CMD ["php", "index.php"]
