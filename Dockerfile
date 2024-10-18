@@ -1,7 +1,11 @@
-FROM php:7.4-apache
-WORKDIR /var/www/html
-COPY . /var/www/html
-RUN docker-php-ext-install mysqli pdo pdo_mysql
-EXPOSE 80
-# Start Apache
-CMD ["apache2-foreground"]
+# Use the official PHP image
+FROM php:8.2-cli
+
+# Set the working directory
+WORKDIR /app
+
+# Copy your PHP files into the container
+COPY . /app
+Expose 80
+# Run the PHP script (replace 'index.php' with your main PHP file)
+CMD ["php", "index.php"]
