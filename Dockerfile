@@ -21,7 +21,7 @@ RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html
 
 # Expose port 80
-EXPOSE 80
+EXPOSE 2000
 
 # Start the Apache service when the container starts
 CMD ["apache2-foreground"]
