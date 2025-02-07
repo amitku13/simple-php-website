@@ -13,6 +13,10 @@ RUN apt-get update && apt-get install -y \
 # Enable Apache rewrite module
 RUN a2enmod rewrite
 
+# Change Apache to listen on port 2000
+RUN sed -i 's/Listen 80/Listen 2000/' /etc/apache2/ports.conf \
+    && sed -i 's/:80/:2000/' /etc/apache2/sites-enabled/000-default.conf
+
 # Copy the source code into the container
 COPY . /var/www/html/
 
