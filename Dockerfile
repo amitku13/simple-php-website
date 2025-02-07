@@ -20,7 +20,7 @@ COPY . /var/www/html/
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html
 
-# Expose port 80
+# Expose port 2000
 EXPOSE 2000
 
 # Start the Apache service when the container starts
